@@ -3,17 +3,20 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Try from './TRY';
+import IamtheAnswer from './IamtheAnswer';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import {usestate} from 'react';
 
-const path1 = <Try/>
-const app = <App/>
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const [flag,setFlag]=usestate("flag3");
 root.render(
   <React.StrictMode>
-  <BrowserRouter>
+    <BrowserRouter>
   <Routes>
-    <Route path='/' element={app}/>
-    <Route path='/stage1' element={path1}/>
+    <Route path='/' element={<App/>}/>
+    <Route path='/try' element={<Try setFlag/>}/>
+    <Route path='/answer' element={<IamtheAnswer flag/>}/>
     {/* <Route path=`${path}` element={}/> */}
   </Routes>
   </BrowserRouter>

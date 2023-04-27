@@ -1,7 +1,5 @@
-// import React from "react";
-import "./App.css";
 
-import { useEffect, useState } from "react";
+import "./App.css";
 const [flag, setFlag] = useState("flag3");
 function App() {
   useEffect(() => {}, []);
