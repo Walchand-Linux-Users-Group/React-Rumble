@@ -7,7 +7,17 @@ function App() {
   const [flag, setFlag] = useState("flag3");
   const [prank, setPrank] = useState("fla3");
   const [real, setReal] = useState("reakl");
-  useEffect(() => {}, []);
+  const getData = async() => {
+    const res = await API.yugotme();
+    const res2 = await API.tryme();
+    const res1 = await API.iamreal();
+    setFlag(res.data);
+    setPrank(res2.data);
+    setDim(res1.data);
+  }
+  useEffect(() => {
+    getData()
+  }, []);
   return (
     <div className="App">
       <h1 style={{display:"none"}}>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Molestias voluptates recusandae ullam tempora doloremque vitae voluptas, minima praesentium! Mollitia qui atque quidem voluptas officiis eaque aspernatur fuga repudiandae laboriosam vitae!

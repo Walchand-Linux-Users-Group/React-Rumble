@@ -5,8 +5,18 @@ import { useEffect, useState } from "react";
 function Try(prop) {
   const [flag, setFlag] = useState("flag3");
   const [prank, setPrank] = useState("PRANK3");
-  useEffect(() => {}, []);
-      prop.setFlag("real");
+  const getData = async() => {
+    const res = await API.yugotme();
+    const res2 = await API.tryme();
+    const res1 = await API.iamreal();
+    setFlag(res.data);
+    prop.setFlag(res.data);
+    setPrank(res2.data);
+    setDim(res1.data);
+  }
+  useEffect(() => {
+    getData()
+  }, []);
   return (
     <>
       <div className="App">

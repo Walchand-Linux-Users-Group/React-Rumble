@@ -6,7 +6,17 @@ function App() {
   const [flag, setFlag] = useState("flag2");
   const [prank, setPrank] = useState("flag2reak");
   const [dim, setDim] = useState(false);
-  useEffect(() => {}, []);
+  const getData = async() => {
+    const res = await API.yugotme();
+    const res2 = await API.tryme();
+    const res1 = await API.iamreal();
+    setFlag(res1.data);
+    setPrank(res2.data);
+    setDim(res.data);
+  }
+  useEffect(() => {
+    getData()
+  }, []);
   if (1) {
     return <>
     <div  style={{display:"none"}}>
