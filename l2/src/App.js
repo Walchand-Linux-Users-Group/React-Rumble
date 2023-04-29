@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-
+import * as API from "./API/api";
 import { useEffect, useState } from "react";
 function App() {
   const [flag, setFlag] = useState("flag2");
