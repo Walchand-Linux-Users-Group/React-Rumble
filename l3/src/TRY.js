@@ -1,4 +1,5 @@
 import React from "react";
+import * as API from "./API/api";
 import "./App.css";
 
 import { useEffect, useState } from "react";
